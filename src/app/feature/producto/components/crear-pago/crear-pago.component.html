@@ -1,0 +1,38 @@
+<div class="center-component">
+    <h1 id="registra-pago">Registrar Pago</h1>
+    <h3></h3>
+    <form [formGroup]="pagoForm" (ngSubmit)="cerar()">
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Referencia de Pago:</label>
+            </div>
+            <div class="col-sm-4">
+                <input validar type="text" id="referenciaPago" name="referenciaPago" placeholder="Referencia pago" class="form-control" formControlName="descripcion">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Aplica descuento:</label>
+            </div>
+            <div class="col-sm-4">
+                <input validar type="text" id="aplicaDescuento" name="aplicaDescuento" placeholder="Aplica descuento" class="form-control" formControlName="descripcion">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Valor base:</label>
+            </div>
+            <div class="col-sm-4">
+                <input validar type="text" id="valorBase" name="valorBase" placeholder="Valor base" class="form-control" formControlName="descripcion">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>fecha de registro:</label>
+            </div>
+            <div class="col-sm-4">
+                <input validar type="text" id="fechaRegistro" name="descripcion" placeholder="Fecha Registro" class="form-control" formControlName="descripcion">
+            </div>
+        </div>
+    </form>
+</div>
