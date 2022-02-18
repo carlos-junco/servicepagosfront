@@ -29,7 +29,7 @@ describe('PagoService', () => {
 
   it('deberia listar pagos', () => {
     const dummyPagos = [
-      new Pago(1, '1111',true,1000000,new Date('2022-02-16')), new Pago(2, '2222',false,1000000,new Date('2022-02-16'))
+      new Pago(1, '1111', true, 1000000, new Date('2022-02-16')), new Pago(2, '2222', false, 1000000, new Date('2022-02-16'))
     ];
     service.consultar().subscribe(productos => {
       expect(productos.length).toBe(2);
@@ -41,7 +41,7 @@ describe('PagoService', () => {
   });
 
   it('deberia crear un pago', () => {
-    const dummyPago = new Pago(1, '1111',true,1000000,new Date('2022-02-16'));
+    const dummyPago = new Pago(1, '1111', true, 1000000, new Date('2022-02-16'));
     service.guardar(dummyPago).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });
@@ -51,7 +51,7 @@ describe('PagoService', () => {
   });
 
   it('deberia eliminar un producto', () => {
-    const dummyPago = new Pago(1, '1111',true,1000000,new Date('2022-02-16'));
+    const dummyPago = new Pago(1, '1111', true, 1000000, new Date('2022-02-16'));
     service.eliminar(dummyPago).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });

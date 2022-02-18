@@ -7,7 +7,7 @@ import { HomeComponent } from '@home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, canActivate: [SecurityGuard]  },
-  { path: 'pago', loadChildren: () => import('@producto/pago.module').then(mod => mod.PagoModule) }
+  { path: 'pago', loadChildren: () => import('./feature/pago/pago.module').then(mod => mod.PagoModule) }
 
 ];
 

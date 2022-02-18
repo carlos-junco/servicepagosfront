@@ -9,11 +9,13 @@ import { MenuItem } from '@core/modelo/menu-item';
 })
 export class AppComponent {
   title = 'app-base';
-  public companies: MenuItem[] = [
+
+
+  // se usa con el property binding [item]='options'
+  public options: MenuItem[] = [
     { url: '/home', nombre: 'home' },
     { url: '/pago', nombre: 'pago' }
 
   ];
-
 
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CrearPagoComponent } from './components/crear-pago/crear-pago.component';
-import { ListarProductoComponent } from './components/listar-producto/listar-producto.component';
+import { ListarPagoComponent } from './components/listar-pago/listar-pago.component';
 import { BorrarProductoComponent } from './components/borrar-producto/borrar-producto.component';
 import { PagoComponent } from './components/pago/pago.component';
 
@@ -17,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'listar',
-        component: ListarProductoComponent
+        component: ListarPagoComponent
       },
       {
         path: 'borrar',

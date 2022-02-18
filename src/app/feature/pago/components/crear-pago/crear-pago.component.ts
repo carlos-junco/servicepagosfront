@@ -10,8 +10,12 @@ const LONGITUD_MAXIMA_PERMITIDA_TEXTO = 20;
   templateUrl: './crear-pago.component.html',
   styleUrls: ['./crear-pago.component.css']
 })
+
+
 export class CrearPagoComponent implements OnInit {
   pagoForm: FormGroup;
+
+  // instancia en el constructor un objeto service;
   constructor(protected pagoServices: PagoService) { }
 
   ngOnInit() {

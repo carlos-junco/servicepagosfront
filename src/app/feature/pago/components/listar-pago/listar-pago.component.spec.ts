@@ -1,46 +1,46 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
-import { ListarProductoComponent } from './listar-producto.component';
+import { ListarPagoComponent } from './listar-pago.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ProductoService } from '../../shared/service/producto.service';
-import { Producto } from '../../shared/model/producto';
+import { PagoService } from '@producto/shared/service/pagoservice';
+import { Pago } from '@producto/shared/model/pago';
 import { HttpService } from 'src/app/core/services/http.service';
 
 describe('ListarProductoComponent', () => {
-  let component: ListarProductoComponent;
-  let fixture: ComponentFixture<ListarProductoComponent>;
-  let productoService: ProductoService;
-  const listaProductos: Producto[] = [new Producto('1', 'Producto 1'), new Producto('2', 'Producto 2')];
+  let component: ListarPagoComponent;
+  let fixture: ComponentFixture<ListarPagoComponent>;
+  let productoService: PagoService;
+  const listaPagos: Pago[] = [ new Pago(1, '1111', true, 1000000, new Date('2022-02-16')), new Pago(2, '2222', false, 1000000, new Date('2022-02-16'))];
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ListarProductoComponent],
+      declarations: [ListarPagoComponent],
       imports: [
         CommonModule,
         HttpClientModule,
         RouterTestingModule
       ],
-      providers: [ProductoService, HttpService]
+      providers: [PagoService, HttpService]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListarProductoComponent);
+    fixture = TestBed.createComponent(ListarPagoComponent);
     component = fixture.componentInstance;
-    productoService = TestBed.inject(ProductoService);
+    productoService = TestBed.inject(PagoService);
     spyOn(productoService, 'consultar').and.returnValue(
-      of(listaProductos)
+      of(listaPagos)
     );
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
-    component.listaProductos.subscribe(resultado => {
+    component.listaPagos.subscribe(resultado => {
       expect(2).toBe(resultado.length);
   });
 });

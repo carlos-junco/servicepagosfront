@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagoComponent implements OnInit {
 
+  resul: boolean = true;
+  message: string  = 'Por favor, escoja una opción';
+
   constructor() { }
 
   ngOnInit() {
